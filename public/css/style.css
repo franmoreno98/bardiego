@@ -626,3 +626,45 @@ h2{
     padding: 24px;
     vertical-align: middle;
 } 
+
+
+.div-admin{
+    background-image: url("../storage/fondo-menu.jpg");
+    width: 100%;
+    height: 100%;
+    padding: 100px 0;
+    background-attachment: fixed;
+    background-position:center center;
+    background-size: cover;
+    min-height: 450px;
+    border-bottom: 50px solid #ff9800;
+}
+
+.p1-admin{
+    position: relative;
+    padding: 0 60px 5px;
+    max-width: 100%;
+    font-family: 'Open Sans'!important;
+    font-weight: bold!important;
+    color: #ff9800;
+    text-align: center;
+    font-size: 45px;
+    margin-top: -50px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.p2-admin{
+    position: relative;
+    padding: 0 15px 5px;
+    max-width: 100%;
+    font-family: 'Pacifico'!important;
+    font-weight: normal!important;
+    color: black;
+    text-align: center;
+    font-size: 45px;
+}
+
+.admin-box{
+    margin-top: 50px;
+}
+

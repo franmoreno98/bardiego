@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +21,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/welcome', [HomeController::class, 'index']);
+Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/reservas', [AdminController::class, 'reserva']);
+Route::get('/modificar', [AdminController::class, 'modificar']);
+Route::get('/catering', [AdminController::class, 'catering']);
