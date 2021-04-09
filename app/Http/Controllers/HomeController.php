@@ -19,8 +19,24 @@ class HomeController extends Controller
         $datos=$request->except('_token','Enviar');
         //print_r($datos);
         // die;
-        DB::table('tbl_reserva')->insertGetId(['nombre_reserva'=>$datos['nombre_reserva'],'apellido_reserva'=>$datos['apellido_reserva'],'email_reserva'=>$datos['email_reserva'],'telefono_reserva'=>$datos['telefono_reserva'],'motivo_reserva'=>$datos['motivo_reserva'], 'mensaje_reserva'=>$datos['mensaje_reserva'], 'fecha_reserva'=>$datos['fecha_reserva'], 'hora_reserva'=>$datos['hora_reserva'], 'personas_reserva'=>$datos['personas_reserva']]);
-        return redirect('/');
+
+        //DB::table('tbl_reserva')->insertGetId(['nombre_reserva'=>$datos['nombre_reserva'],'apellido_reserva'=>$datos['apellido_reserva'],'email_reserva'=>$datos['email_reserva'],'telefono_reserva'=>$datos['telefono_reserva'],'motivo_reserva'=>$datos['motivo_reserva'], 'mensaje_reserva'=>$datos['mensaje_reserva'], 'fecha_reserva'=>$datos['fecha_reserva'], 'hora_reserva'=>$datos['hora_reserva'], 'personas_reserva'=>$datos['personas_reserva']]);
+
+        //$con=DB::table('tbl_reserva')->where('fecha_reserva', '=', $datos['fecha_reserva'], 'hora_reserva', '=', $datos['hora_reserva'], )->count();
+        $con=DB::table('tbl_reserva')->where([['fecha_reserva','=',$datos['fecha_reserva']],['hora_reserva','=',$datos['hora_reserva']]])->count();
+
+        // print_r($con);
+        // die;
+        if ($con==0) {
+            DB::table('tbl_reserva')->insertGetId(['nombre_reserva'=>$datos['nombre_reserva'],'apellido_reserva'=>$datos['apellido_reserva'],'email_reserva'=>$datos['email_reserva'],'telefono_reserva'=>$datos['telefono_reserva'],'motivo_reserva'=>$datos['motivo_reserva'], 'mensaje_reserva'=>$datos['mensaje_reserva'], 'fecha_reserva'=>$datos['fecha_reserva'], 'hora_reserva'=>$datos['hora_reserva'], 'personas_reserva'=>$datos['personas_reserva']]);
+            return redirect('/');
+        }else{
+            print_r($con);
+            die;
+        }
+
+        
+        
     }
 
 }
