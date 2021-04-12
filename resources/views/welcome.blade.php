@@ -14,6 +14,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- poner el token -->
     
 
 
@@ -196,6 +197,15 @@
 </section>
  <!-- FIN MENU -->
 
+<!-- INICIO MAPA -->
+<div class="div-mapa">
+    <h1 class="h1-mapa">Dónde Estamos</h1>
+    <iframe width="100%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11980.187326132025!2d2.1164257!3d41.3513358!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4448b0c6f6edbcda!2sBar%20Diego!5e0!3m2!1sca!2ses!4v1618235846368!5m2!1sca!2ses%22%3E"></iframe>
+</div>
+ <!-- FIN MAPA -->
+
+
+
   <!-- INICIO RESERVAS -->
 <section id=#section4>
 <div id="section4">
@@ -217,8 +227,8 @@
 									<h3>Reserva una mesa</h3>
 									<div class="col-md-12">
 										<div class="form-group">
-											<select class="custom-select d-block form-control" id="personas_reserva" name="personas_reserva" required data-error="Please select Person">
-											  <option disabled selected>Número de personas</option>
+											<select class="custom-select d-block form-control" id="personas_reserva" name="personas_reserva"  data-error="Por favor selecciona el número de personas" required>
+											  <option value="">Número de personas</option>
 											  <option value="1">1</option>
 											  <option value="2">2</option>
 											  <option value="3">3</option>
@@ -233,14 +243,34 @@
 									</div>
                                     <div class="col-md-12">
 										<div class="form-group">
-											<input id="fecha_reserva" class="datepicker picker__input form-control" onclick="return fecha()" name="fecha_reserva" type="date" value=""  equired data-error="Please enter Date">
+											<input id="fecha_reserva" class="datepicker picker__input form-control" onclick="return fecha()" onfocusout="disponibilidad()" name="fecha_reserva" type="date" value=""  required data-error="Por favor selecciona el día de reserva">
 											<div class="help-block with-errors"></div>
 										</div>                                 
-									</div>
+                                    </div>
+                                    <?php
+                                    //use Illuminate\Support\Facades\DB;
+
+                                    // //$hora = DB::table('tbl_reserva')->where([['hora_reserva','=',$datos['hora_reserva']]]);
+                                    // $disponible = [];
+                                    // $horasReserva = ['08:00-09:00','09:00-10:00','10:00-11:00','11:00-12:00','12:00-13:00','14:00-15:00','15:00-16:00','16:00-17:00'];
+                                    // $horasBD = ['08:00-09:00','09:00-10:00','16:00-17:00'];
+                                    // for ($i=0; $i < count($horasReserva); $i++) { 
+                                    //     if (!in_array($horasReserva[$i], $horasBD)) {
+                                    //         array_push($disponible, $horasReserva[$i]);
+                                    //     }
+
+                                    // }
+                                    // print_r($disponible) ;
+
+                                    // //$horaBD = ;
+                                    
+                                    ?>
+
+
                                     <div class="col-md-12">
 										<div class="form-group">
-											<select class="custom-select d-block form-control" id="hora_reserva" name="hora_reserva" required data-error="Please select Person">
-											  <option disabled selected>Hora de la Reserva</option>
+											<select class="custom-select d-block form-control" id="hora_reserva" name="hora_reserva"  data-error="Por favor selecciona una hora" required>
+											  <option value="">Hora de la Reserva</option>
 											  <option value="12:30">12:30</option>
 											  <option value="13:30">13:00</option>
 											  <option value="13:30">13:30</option>
@@ -254,39 +284,39 @@
 									<h3>Datos de Contacto</h3>
 									<div class="col-md-12">
 										<div class="form-group">
-											<input type="text" class="form-control" id="nombre_reserva" name="nombre_reserva" placeholder="Tu nombre" required data-error="Please enter your name">
+											<input type="text" class="form-control" id="nombre_reserva" name="nombre_reserva" placeholder="Tu nombre" required data-error="Por favor añade tu nombre">
 											<div class="help-block with-errors"></div>
 										</div>                                 
 									</div>
                                     <div class="col-md-12">
 										<div class="form-group">
-											<input type="text" class="form-control" id="apellido_reserva" name="apellido_reserva" placeholder="Tu apellido" required data-error="Please enter your name">
+											<input type="text" class="form-control" id="apellido_reserva" name="apellido_reserva" placeholder="Tu apellido" required data-error="Por favor añade tu apellido">
 											<div class="help-block with-errors"></div>
 										</div>                                 
                                     </div>
 									<div class="col-md-12">
 										<div class="form-group">
-											<input type="text" placeholder="Dirección de Correo Electrónico" id="email_reserva" class="form-control" name="email_reserva" required data-error="Please enter your email">
+											<input type="text" placeholder="Dirección de Correo Electrónico" id="email_reserva" class="form-control" name="email_reserva" required data-error="Por favor añade un correo eléctronico">
 											<div class="help-block with-errors"></div>
 										</div> 
 									</div>
 									<div class="col-md-12">
 										<div class="form-group">
-											<input type="text" placeholder="Número de Teléfono" id="telefono_reserva" class="form-control" name="telefono_reserva" required data-error="Please enter your Numbar">
+											<input type="text" placeholder="Número de Teléfono" id="telefono_reserva" class="form-control" name="telefono_reserva" required data-error="Por favor añade un número de teléfono">
 											<div class="help-block with-errors"></div>
 										</div> 
                                     </div>
                                     
 									<div class="col-md-12">
 										<div class="form-group">
-											<input type="text" placeholder="Motivo de la reserva" id="motivo_reserva" class="form-control" name="motivo_reserva" required data-error="Please enter your Numbar">
+											<input type="text" placeholder="Motivo de la reserva (Opcional)" id="motivo_reserva" class="form-control" name="motivo_reserva">
 											<div class="help-block with-errors"></div>
 										</div> 
 									</div>
 
                                     <div class="col-md-12">
 										<div class="form-group">
-											<input type="text" placeholder="Mensaje (Opcional)" id="mensaje_reserva" class="form-control" name="mensaje_reserva" required data-error="Please enter your Numbar">
+											<input type="text" placeholder="Mensaje (Opcional)" id="mensaje_reserva" class="form-control" name="mensaje_reserva">
 											<div class="help-block with-errors"></div>
 										</div> 
 									</div>

@@ -26,4 +26,57 @@ function validarReserva() {
     var telefono = document.getElementById('telefono_reserva').value;
     var motivo = document.getElementById('motivo_reserva').value;
     var mensaje = document.getElementById('mensaje_reserva').value;
+    var errors = 0;
+
+    if (personas === "") {
+        personas.style.backgroundColor = "rgba(197, 40, 40, 0.719)";
+        errors = 1;
+    }
+    if (hora === "") {
+        hora.style.backgroundColor = "rgba(197, 40, 40, 0.719)";
+        errors = 1;
+    }
+
+    if (fecha === "") {
+        fecha.style.backgroundColor = "rgba(197, 40, 40, 0.719)";
+        errors = 1;
+    }
+    alert('hola')
+
+    if (nombre === "") {
+        nombre.style.backgroundColor = "rgba(197, 40, 40, 0.719)";
+        errors = 1;
+
+    }
+    if (apellido === "") {
+        apellido.style.backgroundColor = "rgba(197, 40, 40, 0.719)";
+        errors = 1;
+
+    }
+    if (email === "") {
+        email.style.backgroundColor = "rgba(197, 40, 40, 0.719)";
+        errors = 1;
+
+    }
+    if (telefono === "") {
+        telefono.style.backgroundColor = "rgba(197, 40, 40, 0.719)";
+        errors = 1;
+
+    }
+    if (motivo === "") {
+        motivo.style.backgroundColor = "rgba(197, 40, 40, 0.719)";
+        errors = 1;
+
+    }
+    if (mensaje === "") {
+        mensaje.style.backgroundColor = "rgba(197, 40, 40, 0.719)";
+        errors = 1;
+
+    }
+    if (errors === 0) {
+        return true
+    } else {
+        return false;
+    }
+
 }

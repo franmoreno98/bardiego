@@ -20,5 +20,12 @@ use App\Http\Controllers\HomeController;
 // });
 
 //Auth::routes();
- Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
- Route::get('/crearReserva', [App\Http\Controllers\HomeController::class, 'crearReserva']);
+ Route::get('/', [HomeController::class, 'index']);
+ Route::get('/crearReserva', [HomeController::class, 'crearReserva']);
+//  Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//  Route::get('/welcome', [HomeController::class, 'index']);
+ Route::get('/admin', [AdminController::class, 'index']);
+ Route::get('/reservas', [AdminController::class, 'reserva']);
+ Route::get('/modificar', [AdminController::class, 'modificar']);
+ Route::get('/catering', [AdminController::class, 'catering']);
+ Route::get('/disponibilidad', [HomeController::class, 'disponibilidad']);
