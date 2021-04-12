@@ -14,3 +14,16 @@ function fecha() {
     //alert(maxDate);
     $('#fecha_reserva').attr('min', maxDate);
 }
+
+function validarReserva() {
+    console.log('validando reserva');
+    var personas = document.getElementById('personas_reserva').value;
+    var hora = document.getElementById('hora_reserva').value;
+    var fecha = document.getElementById('fecha_reserva').value;
+    var nombre = document.getElementById('nombre_reserva').value;
+    var apellido = document.getElementById('apellido_reserva').value;
+    var email = document.getElementById('email_reserva').value;
+    var telefono = document.getElementById('telefono_reserva').value;
+    var motivo = document.getElementById('motivo_reserva').value;
+    var mensaje = document.getElementById('mensaje_reserva').value;
+}
