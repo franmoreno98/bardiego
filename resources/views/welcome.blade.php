@@ -149,7 +149,7 @@
 						<div class="why-text">
 							<h4>Carta de Bocadillos</h4>
 							<p>Selección de Bocadillos de la casa</p>
-							<h5 class="p-boton-carta"><a class="btn-carta" href="./storage/CAFETERIA-DIEGO-CARTA-BOCADILLOS.pdf">Descargar Carta</a></h5>
+							<h5 class="p-boton-carta"><a class="btn-carta" href="./storage/CAFETERIA-DIEGO-CARTA-BOCADILLOS.pdf" target="blank">Descargar Carta</a></h5>
 						</div>
 					</div>
 				</div>
@@ -160,7 +160,7 @@
 						<div class="why-text">
 							<h4>Carta de Platos Combinados</h4>
 							<p>Selección de Platos Combinados de la casa</p>
-							<h5 class="p-boton-carta"><a class="btn-carta" href="./storage/CAFETERIA-DIEGO-PLATOS-COMBINADOS.pdf">Descargar Carta</a></h5>
+							<h5 class="p-boton-carta"><a class="btn-carta" href="./storage/CAFETERIA-DIEGO-PLATOS-COMBINADOS.pdf" target="blank">Descargar Carta</a></h5>
 						</div>
 					</div>
 				</div>
@@ -171,7 +171,7 @@
                             <div class="why-text">
                                 <h4>Carta de Tapas</h4>
                                 <p>Selección de Tapas de la casa</p>
-                                <h5 class="p-boton-carta"><a class="btn-carta" href="./storage/CAFETERIA-DIEGO-TAPAS.pdf">Descargar Carta</a></h5>
+                                <h5 class="p-boton-carta"><a class="btn-carta" href="./storage/CAFETERIA-DIEGO-TAPAS.pdf" target="blank">Descargar Carta</a></h5>
                             </div>
                         </div>
                     </div>

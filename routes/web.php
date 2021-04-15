@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PDFController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,7 @@ use App\Http\Controllers\LoginController;
  Route::get('/login', [LoginController::class, 'login']);
  Route::post('recibirlogin', [LoginController::class, 'recibirlogin']);
  Route::get('logout',[LoginController::class, 'logout']);
+ /* Route::group(['middleware' => 'prevent-back-history'],function(){
+    Auth::routes();
+    Route::get('/home', 'LoginController@index');
+  }); */
