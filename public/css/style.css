@@ -3,14 +3,17 @@ h2{
 }
 
 .d-flex.align-items-center.justify-content-center.min-vh-100{
-    background: url('https://cdn.website.dish.co/media/2b/9c/825554.jpg');
+    z-index: 1;
     position:relative;
     display: inline-block;
 }
+form{
+    z-index: 2;
+}
 
 .div-conozcanos{
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 85px;
+    margin-bottom: 85px;
 }
 
 .img-fluid{
@@ -45,7 +48,7 @@ h2{
 }
 
 .div-menu{
-    background-image: url("../storage/fondo-menu.jpg");
+    background-image: url("../../storage/app/public/uploads/menu2.png");
     width: 100%;
     height: 100%;
     padding: 100px 0;
@@ -53,7 +56,6 @@ h2{
     background-position:center center;
     background-size: cover;
     min-height: 450px;
-    border-bottom: 50px solid #ff9800;
 }
 
 .p1-menu{
@@ -66,7 +68,6 @@ h2{
     text-align: center;
     font-size: 45px;
     margin-top: -50px;
-    background: rgba(255, 255, 255, 0.7);
 }
 
 .p2-menu{
@@ -80,17 +81,43 @@ h2{
     font-size: 45px;
 }
 
-.top-navbar .navbar-light .navbar-nav .nav-item.active .nav-link {
-    background: #ff9800;
-    color: #ffffff!important;
-    border-radius: 4px;
+body {
+    position: relative; 
 }
 
-.top-navbar .navbar-light .navbar-nav .nav-item .nav-link:hover,
-.top-navbar .navbar-light .navbar-nav .nav-item .nav-link:active {
+nav.navbar.navbar-expand-sm.bg-dark.navbar-dark.fixed-top{
+    background: transparent!important;
+}
+nav#mynav{
+    background-color: transparent!important;
+}
+a.nav-link{
+    color: white !important;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Pacifico' !important;
+}
+
+
+.fixed-top {
+    background-color: #222 !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    background: transparent!important;
+}
+
+li.nav-item:hover,
+li.nav-item:active {
     background: #ff9800;
     color: #ffffff;
     border-radius: 4px;
+} 
+
+.navbar-nav a.nav-link.active {
+    color: #ff9800 !important;
+}
+.navbar-nav a.nav-link:hover{
+    color: white !important;
 }
 
 .h1-conozcanos{
@@ -127,11 +154,12 @@ h2{
     z-index: 1;
 }
 
-.navbar  {
+.navbar {
     background: rgba(0,0,0,0.87)!important;
 }
-.navbar-light .navbar-nav .nav-link{
-    color: white!important;
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
 }
 
 .d-flex.align-items-center.justify-content-center.min-vh-100:after {
@@ -142,7 +170,7 @@ h2{
     left:0;
     right:0;
     background: rgba(0,0,0,0.35);
-  }
+}
 
   .d-flex {
     display: flex !important;
@@ -214,7 +242,7 @@ h2{
     align-items: center;
     margin: 5px 5px;
     transition: ease-out 0.4s;
-  }
+}
 
 .fa:hover {
     opacity: 0.9;
@@ -228,26 +256,28 @@ h2{
 .fa-facebook {
     background: #3B5998;
     color: white;
-  }
+}
   
-  .fa-google {
+.fa-google {
     background: #dd4b39;
     color: white;
-  }
+}
 
-  .social-media-icons{
+.social-media-icons{
       display: flex;
       justify-content: center;
       margin-top: 30px;
       margin-bottom: 30px;
-  }
-  @media (min-width: 992px){
-  .col-lg-4 {
-      -ms-flex: 0 0 33.333333%;
-      flex: 0 0 33.333333%;
-      max-width: 33.333333%;
-  }
 }
+
+@media (min-width: 992px){
+    .col-lg-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}
+
 .special-list{
         display: -ms-flexbox;
         display: flex;
@@ -262,44 +292,54 @@ h2{
     overflow: hidden;
     -webkit-box-shadow: 0 0 10px #ccc;
     box-shadow: 0 0 10px #ccc;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E0DDDD;
+    display: block;
+    margin: 0 0 23px;
+    padding: 10px;
+    position: relative;
 }
 
 .img-fluid2 {
+    border: 3px solid #E4DFDF;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    max-height: 330px;
     max-width: 100%;
-    height: auto;
 }
 
 .why-text {
     position: absolute;
-    left: 0;
+    left: 15px;
     bottom: -100%;
-    right: 0;
-    height: 100%;
-    background: rgba(207, 166, 113, 0.9);
+    right: 15px;
+    height: 96%;
+    background: rgba(255, 255, 255, 0.8);
     padding: 12px 12px;
     -webkit-transition: all .5s ease;
     transition: all .5s ease;
+    z-index: 2;
 }
 
 .why-text h4 {
     margin-top: 30px;
     text-align: center;
-    color: #ffffff;
+    color: black;
     font-size: 24px;
     font-weight: 500;
     font-family: 'Arbutus Slab', serif;
 }
 
-.why-text p {
-    text-align: center;
-}
-
 .why-text h5 {
  text-align: center;
+ color: black;
 }
 
 .why-text p {
-    color: #ffffff;
+    text-align: center;
+    color: black;
     font-size: 18px;
     border-bottom: 1px dashed #010101;
     margin: 0px;
@@ -352,11 +392,9 @@ h2{
 }
 
 .reservation-box{
-    background: url('../storage/fondo-reserva.jpg') no-repeat 50% 50%;
     text-align: center;
     overflow: hidden;
-    padding: 20px 20px 20px;
-    background-size: cover;
+    padding: 20px 20px 20px 20px;
 }
 
 .p1-reserva{
@@ -369,7 +407,6 @@ h2{
     text-align: center;
     font-size: 45px;
     margin-top: 50px;
-    background: rgba(255, 255, 255, 0.7);
 }
 
 .p2-reserva{
@@ -382,7 +419,6 @@ h2{
     text-align: center;
     font-size: 45px;
 }
-
 
 #contactForm h3 {
     margin-top: 30px;
@@ -398,12 +434,19 @@ h2{
     margin: 0 auto 10px;
     line-height: 1!important;
     font-size: 50px!important;
-    color: #fff;
+    color: black;
+    margin-top: 15px;
 }
+
+section#\#section6{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
 
 .telefono{
     font-size: 20px;
-    color:#fff;
+    color:black;
     text-decoration: none;
 }
 
@@ -418,7 +461,6 @@ h2{
     font-size: 45px;
     text-align: center;
 }
-
 
 .brand-color {
     color: #ff9800 !important;
@@ -438,7 +480,6 @@ h2{
     align-items: center;
     margin-bottom: 50px;
 }
-
 
 .divider-mark {
     width: 80px;
@@ -552,9 +593,16 @@ h2{
     height: 120px;
     margin: 0 0 10px;
 }
+a.carousel-control-prev,
+a.carousel-control-next{
+    display: none;
+}
 
 .nuestros-servicios{
     margin-bottom: 50px;
+    background-image: url("../storage/servicios.jpg") ;
+    padding: 20px;
+    background-size: cover;
 }
 
 .contact-block-holder {
@@ -576,7 +624,7 @@ h2{
 
 @media only screen and (min-width: 992px){
     .contact-block {
-        margin: 0 24px 48px 24px;
+        margin: 0 24px 0px 24px;
     }
 }
 
@@ -602,7 +650,6 @@ h2{
 .contact-block2 a {
     display: block;
     padding: 15px;
-    vertical-align: top;
     text-decoration: none;
     text-align: center;
     word-break: break-all;
@@ -627,6 +674,11 @@ h2{
     vertical-align: middle;
 } 
 
+.services-list span{
+    color: white;
+    font-size: 20px;
+    font-weight: 900;
+}
 
 .div-admin{
     background-image: url("../storage/fondo-menu.jpg");
@@ -636,27 +688,21 @@ h2{
     background-attachment: fixed;
     background-position:center center;
     background-size: cover;
-    min-height: 450px;
-    border-bottom: 50px solid #ff9800;
+    min-height: 90vh;
 }
 
 .p1-admin{
     position: relative;
-    padding: 0 60px 5px;
-    max-width: 100%;
     font-family: 'Open Sans'!important;
     font-weight: bold!important;
     color: #ff9800;
     text-align: center;
     font-size: 45px;
-    margin-top: -50px;
-    background: rgba(255, 255, 255, 0.7);
+    margin-top: -15px;
 }
 
 .p2-admin{
     position: relative;
-    padding: 0 15px 5px;
-    max-width: 100%;
     font-family: 'Pacifico'!important;
     font-weight: normal!important;
     color: black;
@@ -668,3 +714,279 @@ h2{
     margin-top: 50px;
 }
 
+.footer-admin{
+    position: fixed;
+    height: 210px;
+    background-color: red;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+}
+
+.div-tabla-reserva{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+}
+
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    color: black;
+    border-top: 1px solid #dee2e6;
+    border-right: 1px solid black;
+    background-color: white;
+    text-align: center;
+    font-size: 16px;
+}
+
+.table th{
+    text-align: center;
+    font-size: 18px;
+}
+
+.div-mapa{
+    width: 60%;
+    margin-top: 50px;
+    margin-right:auto;
+    margin-left:auto;
+}
+
+.h1-mapa{
+    padding: 0 60px 5px;
+    max-width: 100%;
+    font-family: 'Open Sans'!important;
+    font-weight: bold!important;
+    color: black;
+    text-align: center;
+    font-size: 45px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+
+.h1-mapa::before,
+.h1-mapa::after {
+    display: inline-block;
+    content: "";
+    border-top: 1px solid #ff9800 ;
+    margin: -10px 1rem;
+    width: 40px;
+    height: 1px;
+    left: 0;
+    transform: translateY(-1rem);
+}
+
+@media (max-width:767px){
+    .apellido,
+    .email,
+    .telefono,
+    .mensaje{
+        display: none;
+    }
+    .div-tabla-reserva{
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 20px!important;
+    }
+    .table tr{
+        font-size: 13px;
+    }
+    .table td{
+        font-size: 11px;
+    }
+    .table th{
+        font-size: 11px;
+    }
+    .footer-admin{
+        position: inherit;
+    }
+}
+
+@media only screen 
+and (min-device-width : 360px) 
+and (max-device-width : 640px) 
+and (orientation : landscape){
+    .apellido,
+    .email,
+    .telefono,
+    .mensaje{
+        display: revert;
+    }
+    .div-tabla-reserva{
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 20px!important;
+    }
+    .table tr{
+        font-size: 10px;
+    }
+    .table td{
+        font-size: 9px;
+    }
+    .table th{
+        font-size: 10px;
+    }
+    .footer-admin{
+        position: inherit;
+    }
+}
+
+@media only screen 
+and (min-device-width : 415px) 
+and (max-device-width : 737px) 
+and (orientation : landscape){
+    .apellido,
+    .email,
+    .telefono,
+    .mensaje{
+        display: revert;
+    }
+    .div-tabla-reserva{
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 20px!important;
+    }
+    .table tr{
+        font-size: 10px;
+    }
+    .table td{
+        font-size: 9px;
+    }
+    .table th{
+        font-size: 9px;
+    }
+    .footer-admin{
+        position: inherit;
+    }
+}
+
+
+@media only screen 
+and (min-device-width : 415px) 
+and (max-device-width : 825px) 
+and (orientation : landscape){
+    .apellido,
+    .email,
+    .telefono,
+    .mensaje{
+        display: revert;
+    }
+    .div-tabla-reserva{
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 20px!important;
+    }
+    .table tr{
+        font-size: 10px;
+    }
+    .table td{
+        font-size: 9px;
+    }
+    .table th{
+        font-size: 9px;
+    }
+    .footer-admin{
+        position: inherit;
+    }
+}
+
+.col-lg-6.col-md-6.special-grid.drinks.admin-columnas {
+    flex: 0 0 35%!important;
+    max-width: 50%!important;
+    margin: auto;
+}
+
+@media (max-width:767.98px){
+    .col-lg-6.col-md-6.special-grid.drinks.admin-columnas {
+        flex: 0 0 50%!important;
+    }
+}
+
+.navbar-light .navbar-toggler-icon{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")!important;
+}
+
+.btn-galeria{
+    margin-top: -200px;
+    position: absolute;
+    margin-left: 170px;
+    color: #fff;
+    background-color: transparent;
+    background-image: none;
+    border-color: #cfa671;
+    display: inline-block;
+    font-weight: 600;
+    white-space: nowrap;
+    vertical-align: middle;
+    display: inline-block;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 2px solid #ff9800;
+    padding: 12px 30px;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: .1875rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: ease-out 0.3s;
+    text-decoration: none;
+    background-color: #ff9800;
+    box-shadow: -5px -5px 0px black;
+}
+
+.btn-conozcanos{
+    margin-top: -270px;
+    position: absolute;
+    margin-left: 220px;
+    color: #fff;
+    background-color: transparent;
+    background-image: none;
+    border-color: #cfa671;
+    display: inline-block;
+    font-weight: 600;
+    white-space: nowrap;
+    vertical-align: middle;
+    display: inline-block;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 2px solid #ff9800;
+    padding: 12px 30px;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: .1875rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: ease-out 0.3s;
+    text-decoration: none;
+    background-color: #ff9800;
+    box-shadow: -5px -5px 0px black;
+}
+
+.figura1{
+    background: url('../../storage/app/public/uploads/img-figura1.png') no-repeat scroll 0 0 transparent;
+    background-position: -54px -267px;
+    left: -4px;
+    top: -12px;
+    display: block;
+    height: 62px;
+    position: absolute;
+    width: 63px;
+    z-index: 1;
+}
+.figura2{
+    background: url('../../storage/app/public/uploads/img-figura1.png') no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 62px;
+    position: absolute;
+    width: 63px;
+    z-index: 1;
+    background-position: -125px -267px;
+    bottom: 8px;
+    right: 0px;
+}

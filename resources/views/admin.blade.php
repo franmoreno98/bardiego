@@ -26,14 +26,7 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbars-rs-food">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active"><a class="nav-link" href="#">Menú</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Dónde Estamos</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Horarios De Apertura</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Opciones De Pago</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Galería</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Servicios</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Reserva</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Logout</a></li>
 					</ul>
 				</div>
 			</div>
@@ -55,9 +48,9 @@
     <div class="admin-box">
 		<div class="container">
 			<div class="row special-list">
-				<div class="col-lg-4 col-md-6 special-grid drinks">
+				<div class="col-lg-6 col-md-6 special-grid drinks">
 					<div class="gallery-single fix">
-						<img src="./storage/reserva.jpg" class="img-fluid2" alt="Image">
+						<img src="../storage/app/public/uploads/reserva.jpg" class="img-fluid2" alt="Image">
 						<div class="why-text">
 							<h4>Reservas</h4>
 							<p>Mira todas las reservas que se han hecho</p>
@@ -66,24 +59,13 @@
 					</div>
 				</div>
 				
-				<div class="col-lg-4 col-md-6 special-grid drinks">
+				<div class="col-lg-6 col-md-6 special-grid drinks">
 					<div class="gallery-single fix">
-						<img src="./storage/modificar.png" class="img-fluid2" alt="Image">
+						<img src="../storage/app/public/uploads/modificar.png" class="img-fluid2" alt="Image">
 						<div class="why-text">
 							<h4>Modificar</h4>
 							<p>Modifique alguno de los apartados</p>
 							<h5 class="p-boton-carta"><a class="btn-carta" href="modificar">Modificar</a></h5>
-						</div>
-					</div>
-				</div>
-				
-				<div class="col-lg-4 col-md-6 special-grid drinks">
-					<div class="gallery-single fix">
-						<img src="./storage/catering.jpg" class="img-fluid2" alt="Image">
-						<div class="why-text">
-							<h4>Catering</h4>
-							<p>Mire el apartado de Catering</p>
-							<h5 class="p-boton-carta"><a class="btn-carta" href="catering">Catering</a></h5>
 						</div>
 					</div>
 				</div>

@@ -9,18 +9,16 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <script src="{{asset('js/validaciones.js')}}"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
-
-
-
 </head>
-
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
 	<!-- HEADER MENU -->
 	<header class="top-navbar">
-		<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <span class="position-absolute trigger">
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="mynav">
 			<div class="container">
 				<a class="navbar-brand" href="#">
 					<img src="images/foto1.jpg" alt="" />
@@ -30,58 +28,82 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbars-rs-food">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active"><a class="nav-link" href="#">Menú</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Dónde Estamos</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Horarios De Apertura</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Opciones De Pago</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Galería</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Servicios</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Reserva</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="#section2">Conócenos!</a> </li>
+						<li class="nav-item"> <a class="nav-link" href="#section3">Menu</a></li>
+						<li class="nav-item"><a class="nav-link" href="#section4">Reservar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#section5">Horarios de Apertura</a></li>
+						<li class="nav-item"><a class="nav-link" href="#section7">Galería</a></li>
+						<li class="nav-item"> <a class="nav-link" href="#section8">Servicios</a></li>
+						<li class="nav-item"><a class="nav-link" href="#section9">Contacto</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
 	</header>
+    <script>
+            (new IntersectionObserver(function(e,o){
+                if (e[0].intersectionRatio > 0){
+                    document.documentElement.removeAttribute('class');
+                } else {
+                    document.documentElement.setAttribute('class','stuck');
+                };
+            })).observe(document.querySelector('.trigger'));
+            
+        </script>
+        <style>
+            .fixed-top {
+                transition: all 0.25s ease-in;
+            }
+            .stuck nav#mynav {
+                background-color: black !important;
+                padding-top: 5px !important;
+                padding-bottom: 5px !important;
+            }
+            .stuck a.nav-link {
+                color: white!important;
+            }
+            .stuck .navbar-nav a.nav-link:hover{
+                color: black !important;
+            }
+
+        </style>
 	<!-- FIN HEADER MENU -->
 
     <!-- INICIO CAROUSEL -->
+<section id=#section1>
+<div id="section1">
     <div class="container-fluid px-0">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner bg-info" role="listbox">
-            <div class="carousel-item active">
-                <div class="d-flex align-items-center justify-content-center min-vh-100">
-                    <h1 class="display-1">CAFETERIA DIEGO</h1>
-                    <p class="p-boton-reserva"><a class="btn-reserva-header" href="#">Reserva</a></p>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner bg-info" role="listbox">
+                <div class="carousel-item active">
+                    <div class="d-flex align-items-center justify-content-center min-vh-100" style="background: url('../storage/app/public/uploads/img_header.jpg');">
+                        <h1 class="display-1">CAFETERIA DIEGO</h1>
+                        <p class="p-boton-reserva"><a class="btn-reserva-header" href="#">Reserva</a></p>
+                    </div>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <div class="d-flex align-items-center justify-content-center min-vh-100">
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="d-flex align-items-center justify-content-center min-vh-100">
-                </div>
-            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
     </div>
 </div>
+<div id="section2">
+</section>
 <!-- FIN CAROUSEL -->
 
+
 <!-- CONOZCANOS -->
-<div class="div-conozcanos">
+<section id=#section2>
+    <div class="div-conozcanos">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-6 col-sm-12">
-					<img src="./storage/conozcanos.jpg" alt="" class="img-fluid">
+					<img src="../storage/app/public/uploads/conozcanos.jpg" alt="" class="img-fluid">
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-12 text-center">
 					<div class="inner-column">
@@ -101,11 +123,14 @@
                 </div>
 		</div>
 	</div>
+</div>
+</section>
 	<!-- FIN CONOZCANOS-->
 
-    	
+<section id=#section3>
+<div id="section3">
 	<!-- INICIO MENU -->
-	<div class="div-menu">
+	<div class="div-menu" id=#section3>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 ml-auto mr-auto text-left">
@@ -113,51 +138,68 @@
 				</div>
             </div>
         </div>
-    
+
     <!-- OPCIONES MENU -->
     <div class="menu-box">
 		<div class="container">
 			<div class="row special-list">
 				<div class="col-lg-4 col-md-6 special-grid drinks">
 					<div class="gallery-single fix">
-						<img src="./storage/bocadillo-menu.jpg" class="img-fluid2" alt="Image">
+						<img src="../storage/app/public/uploads/menu1.jpg" class="img-fluid2" alt="Image">
 						<div class="why-text">
 							<h4>Carta de Bocadillos</h4>
 							<p>Selección de Bocadillos de la casa</p>
 							<h5 class="p-boton-carta"><a class="btn-carta" href="./storage/CAFETERIA-DIEGO-CARTA-BOCADILLOS.pdf">Descargar Carta</a></h5>
 						</div>
 					</div>
+                    <div class="figura1"></div>
+                    <div class="figura2"></div>
 				</div>
 				
 				<div class="col-lg-4 col-md-6 special-grid drinks">
 					<div class="gallery-single fix">
-						<img src="./storage/plato-combinado-menu.jpg" class="img-fluid2" alt="Image">
+						<img src="../storage/app/public/uploads/menu2.jpg" class="img-fluid2" alt="Image">
 						<div class="why-text">
 							<h4>Carta de Platos Combinados</h4>
 							<p>Selección de Platos Combinados de la casa</p>
 							<h5 class="p-boton-carta"><a class="btn-carta" href="./storage/CAFETERIA-DIEGO-PLATOS-COMBINADOS.pdf">Descargar Carta</a></h5>
 						</div>
 					</div>
+                    <div class="figura1"></div>
+                    <div class="figura2"></div>
 				</div>
-				
-				<div class="col-lg-4 col-md-6 special-grid drinks">
-					<div class="gallery-single fix">
-						<img src="./storage/foto-tapas.jpg" class="img-fluid2" alt="Image">
-						<div class="why-text">
-							<h4>Carta de Tapas</h4>
-							<p>Selección de Tapas de la casa</p>
-							<h5 class="p-boton-carta"><a class="btn-carta" href="./storage/CAFETERIA-DIEGO-TAPAS.pdf">Descargar Carta</a></h5>
-						</div>
-					</div>
-				</div>
+                    
+                    <div class="col-lg-4 col-md-6 special-grid drinks">
+                        <div class="gallery-single fix">
+                            <img src="../storage/app/public/uploads/menu3.jpg" class="img-fluid2" alt="Image">
+                            <div class="why-text">
+                                <h4>Carta de Tapas</h4>
+                                <p>Selección de Tapas de la casa</p>
+                                <h5 class="p-boton-carta"><a class="btn-carta" href="./storage/CAFETERIA-DIEGO-TAPAS.pdf">Descargar Carta</a></h5>
+                            </div>
+                        </div>
+                        <div class="figura1"></div>
+                        <div class="figura2"></div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>  
+        </div>  
+    </div>
 </div>
+</section>
  <!-- FIN MENU -->
 
-  <!-- INICIO RESERVAS -->
-<div class="reservation-box">
+ <!-- INICIO MAPA -->
+ <div class="div-mapa">
+    <h1 class="h1-mapa">Dónde Estamos</h1>
+    <iframe width="100%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11980.187326132025!2d2.1164257!3d41.3513358!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4448b0c6f6edbcda!2sBar%20Diego!5e0!3m2!1sca!2ses!4v1618235846368!5m2!1sca!2ses"></iframe>
+</div>
+ <!-- FIN MAPA -->
+
+ <!-- INICIO RESERVAS -->
+<section id=#section4>
+<div id="section4">
+    <div class="reservation-box">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -169,13 +211,13 @@
 			<div class="row">
 				<div class="col-lg-12 col-sm-12 col-xs-12">
 					<div class="contact-block">
-						<form id="contactForm">
+						<form id="contactForm" action="{{url('/crearReserva/send')}}"  method="get" enctype="multipart/form-data">
 							<div class="row">
 								<div class="col-md-6">
 									<h3>Reserva una mesa</h3>
 									<div class="col-md-12">
 										<div class="form-group">
-											<select class="custom-select d-block form-control" id="person" required data-error="Please select Person">
+											<select class="custom-select d-block form-control" id="personas_reserva" name="personas_reserva" required data-error="Please select Person">
 											  <option disabled selected>Número de personas</option>
 											  <option value="1">1</option>
 											  <option value="2">2</option>
@@ -184,25 +226,25 @@
 											  <option value="5">5</option>
 											  <option value="6">6</option>
 											  <option value="7">7</option>
-                                              <option value="7">7</option>
+                                              <option value="8">8</option>
 											</select>
 											<div class="help-block with-errors"></div>
 										</div> 
 									</div>
                                     <div class="col-md-12">
 										<div class="form-group">
-											<input id="input_date" class="datepicker picker__input form-control" name="date" type="date" value="" equired data-error="Please enter Date">
+											<input id="fecha_reserva" class="datepicker picker__input form-control" onclick="return fecha()" name="fecha_reserva" type="date" value=""  equired data-error="Please enter Date">
 											<div class="help-block with-errors"></div>
 										</div>                                 
 									</div>
                                     <div class="col-md-12">
 										<div class="form-group">
-											<select class="custom-select d-block form-control" id="person" required data-error="Please select Person">
+											<select class="custom-select d-block form-control" id="hora_reserva" name="hora_reserva" required data-error="Please select Person">
 											  <option disabled selected>Hora de la Reserva</option>
-											  <option value="1">12:30</option>
-											  <option value="2">13:00</option>
-											  <option value="3">13:30</option>
-											  <option value="4">14:00</option>
+											  <option value="12:30">12:30</option>
+											  <option value="13:30">13:00</option>
+											  <option value="13:30">13:30</option>
+											  <option value="14:00">14:00</option>
 											</select>
 											<div class="help-block with-errors"></div>
 										</div> 
@@ -212,50 +254,48 @@
 									<h3>Datos de Contacto</h3>
 									<div class="col-md-12">
 										<div class="form-group">
-											<input type="text" class="form-control" id="name" name="name" placeholder="Tu nombre" required data-error="Please enter your name">
+											<input type="text" class="form-control" id="nombre_reserva" name="nombre_reserva" placeholder="Tu nombre" required data-error="Please enter your name">
 											<div class="help-block with-errors"></div>
 										</div>                                 
 									</div>
                                     <div class="col-md-12">
 										<div class="form-group">
-											<input type="text" class="form-control" id="name" name="name" placeholder="Tu apellido" required data-error="Please enter your name">
+											<input type="text" class="form-control" id="apellido_reserva" name="apellido_reserva" placeholder="Tu apellido" required data-error="Please enter your name">
 											<div class="help-block with-errors"></div>
 										</div>                                 
                                     </div>
 									<div class="col-md-12">
 										<div class="form-group">
-											<input type="text" placeholder="Dirección de Correo Electrónico" id="email" class="form-control" name="email" required data-error="Please enter your email">
+											<input type="text" placeholder="Dirección de Correo Electrónico" id="email_reserva" class="form-control" name="email_reserva" required data-error="Please enter your email">
 											<div class="help-block with-errors"></div>
 										</div> 
 									</div>
 									<div class="col-md-12">
 										<div class="form-group">
-											<input type="text" placeholder="Número de Teléfono" id="phone" class="form-control" name="phone" required data-error="Please enter your Numbar">
+											<input type="text" placeholder="Número de Teléfono" id="telefono_reserva" class="form-control" name="telefono_reserva" required data-error="Please enter your Numbar">
+											<div class="help-block with-errors"></div>
+										</div> 
+                                    </div>
+                                    
+									<div class="col-md-12">
+										<div class="form-group">
+											<input type="text" placeholder="Motivo de la reserva" id="motivo_reserva" class="form-control" name="motivo_reserva" required data-error="Please enter your Numbar">
 											<div class="help-block with-errors"></div>
 										</div> 
 									</div>
+
                                     <div class="col-md-12">
 										<div class="form-group">
-											<select class="custom-select d-block form-control" id="person" required data-error="Please select Person">
-											  <option disabled selected>Motivo de la visita (opcional)</option>
-											  <option value="1">12:30</option>
-											  <option value="2">13:00</option>
-											  <option value="3">13:30</option>
-											  <option value="4">14:00</option>
-											</select>
-											<div class="help-block with-errors"></div>
-										</div> 
-									</div>
-                                    <div class="col-md-12">
-										<div class="form-group">
-											<input type="text" placeholder="Mensaje (Opcional)" id="phone" class="form-control" name="phone" required data-error="Please enter your Numbar">
+											<input type="text" placeholder="Mensaje (Opcional)" id="mensaje_reserva" class="form-control" name="mensaje_reserva" required data-error="Please enter your Numbar">
 											<div class="help-block with-errors"></div>
 										</div> 
 									</div>
 								</div>
 								<div class="col-md-12">
 									<div class="submit-button text-center">
-                                        <p class="p-boton-reserva"><a class="btn-reserva-header" href="#">Reserva</a></p>
+                                    <input type="submit" name="Enviar" value="Enviar">
+
+                                    <!-- <p class="p-boton-reserva"><a class="btn-reserva-header" href="#">Reserva</a></p> -->
 										<div id="msgSubmit" class="h3 text-center hidden"></div> 
 										<div class="clearfix"></div> 
 									</div>
@@ -271,98 +311,105 @@
 			</div>
 		</div>
 	</div>
+    <div id="section5">
+</div>
+</section>
    <!-- FIN RESERVAS -->
 
+     <!-- HORARIO -->
+<section id=#section5>
 
-    <!-- HORARIO -->
-    <div class="horario">
-        <a id="times" class="anchor"></a>
-        <h2>
-        <span class="title brand-color brand-titleFont">Nuestros</span><br>
-        <span class="subtitle brand-subtitleFont">horarios de apertura</span>
-        </h2>
-        <div class="divider-mark brand-bg"></div>
-            <div class="times-list-holder ">
-                <table>
-                    <tbody class="regular-times ">
-                        <tr class="regular">
-                            <th>Lunes</th>
-                            <td>
-                                <div class="time brand-color"></div>
-                                <div class="time brand-color">
-                                    08:00 &ndash; 22:00<span class="kitchen-time"><br>
-                                    Cocina&nbsp;
-                                    08:00 &ndash; 22:00</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="regular">
-                            <th>Martes</th>
-                            <td>
-                                <div class="time brand-color"></div><div class="time brand-color">
-                                    08:00 &ndash; 22:00<span class="kitchen-time"><br>
-                                    Cocina&nbsp;
-                                    08:00 &ndash; 22:00</span>
-                                </div>
-                            </td>
-                            </tr>
-                        <tr class="regular">
-                            <th>Miércoles</th>
-                            <td>
+<div class="horario">
+    <a id="times" class="anchor"></a>
+    <h2>
+    <span class="title brand-color brand-titleFont">Nuestros</span><br>
+    <span class="subtitle brand-subtitleFont">horarios de apertura</span>
+    </h2>
+    <div class="divider-mark brand-bg"></div>
+        <div class="times-list-holder ">
+            <table>
+                <tbody class="regular-times ">
+                    <tr class="regular">
+                        <th>Lunes</th>
+                        <td>
+                            <div class="time brand-color"></div>
+                            <div class="time brand-color">
+                                08:00 &ndash; 22:00<span class="kitchen-time"><br>
+                                Cocina&nbsp;
+                                08:00 &ndash; 22:00</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="regular">
+                        <th>Martes</th>
+                        <td>
                             <div class="time brand-color"></div><div class="time brand-color">
                                 08:00 &ndash; 22:00<span class="kitchen-time"><br>
                                 Cocina&nbsp;
                                 08:00 &ndash; 22:00</span>
                             </div>
-                            </td>
+                        </td>
                         </tr>
-                        <tr class="regular">
-                            <th>Jueves</th>
-                            <td>
-                                <div class="time brand-color"></div><div class="time brand-color">
-                                    08:00 &ndash; 22:00<span class="kitchen-time"><br>
-                                    Cocina&nbsp;
-                                    08:00 &ndash; 22:00</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="regular">
-                            <th>Viernes</th>
-                            <td>
-                                <div class="time brand-color"></div><div class="time brand-color">
-                                    08:00 &ndash; 22:00<span class="kitchen-time"><br>
-                                    Cocina&nbsp;
-                                    08:00 &ndash; 22:00</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="regular">
-                        <th>Sábado</th>
-                            <td>
-                                <div class="time brand-color"></div><div class="time brand-color">
-                                    08:00 &ndash; 22:00<span class="kitchen-time"><br>
-                                    Cocina&nbsp;
-                                    08:00 &ndash; 22:00</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="regular">
-                        <th>Domingo</th>
-                            <td>
-                                <div class="time brand-color">cerrado</div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <tr class="regular">
+                        <th>Miércoles</th>
+                        <td>
+                        <div class="time brand-color"></div><div class="time brand-color">
+                            08:00 &ndash; 22:00<span class="kitchen-time"><br>
+                            Cocina&nbsp;
+                            08:00 &ndash; 22:00</span>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr class="regular">
+                        <th>Jueves</th>
+                        <td>
+                            <div class="time brand-color"></div><div class="time brand-color">
+                                08:00 &ndash; 22:00<span class="kitchen-time"><br>
+                                Cocina&nbsp;
+                                08:00 &ndash; 22:00</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="regular">
+                        <th>Viernes</th>
+                        <td>
+                            <div class="time brand-color"></div><div class="time brand-color">
+                                08:00 &ndash; 22:00<span class="kitchen-time"><br>
+                                Cocina&nbsp;
+                                08:00 &ndash; 22:00</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="regular">
+                    <th>Sábado</th>
+                        <td>
+                            <div class="time brand-color"></div><div class="time brand-color">
+                                08:00 &ndash; 22:00<span class="kitchen-time"><br>
+                                Cocina&nbsp;
+                                08:00 &ndash; 22:00</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="regular">
+                    <th>Domingo</th>
+                        <td>
+                            <div class="time brand-color">cerrado</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
+</div>
+</div>
+</section>
 
-    <!-- FIN HORARIO -->
+<!-- FIN HORARIO -->
 
-    
+  
     <!-- FORMAS DE PAGO -->
-
+    <section id=#section6>
+<div id="section6">
     <div class="formas-pago">
         <a id="payment" class="anchor"></a>
         <h2>
@@ -401,64 +448,69 @@
             </li>
         </ul>
     </div>
-
+    <div id="section7">
+    </div>
+</section>
      <!-- FIN FORMAS DE PAGO -->
 
       <!-- GALERIA IMAGENES -->
-      
-      <div class="gallery-box">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="heading-title text-center">
-                    <h2>
-                        <span class="subtitle brand-subtitleFont">Galería</span>
-                    </h2>
-                    <div class="divider-mark brand-bg"></div>
-					</div>
-				</div>
-			</div>
-			<div class="tz-gallery">
-				<div class="row">
-					<div class="col-sm-12 col-md-4 col-lg-4">
-						<a class="lightbox" href="./storage/gallery-img-04.jpg">
-							<img class="img-fluid3" src="./storage/gallery-img-04.jpg" alt="Gallery Images">
-						</a>
-					</div>
-					<div class="col-sm-6 col-md-4 col-lg-4">
-						<a class="lightbox" href="./storage/gallery-img-01.jpg">
-							<img class="img-fluid3" src="./storage/gallery-img-01.jpg" alt="Gallery Images">
-						</a>
-					</div>
-					<div class="col-sm-6 col-md-4 col-lg-4">
-						<a class="lightbox" href="./storage/gallery-img-04.jpg">
-							<img class="img-fluid3" src="./storage/gallery-img-04.jpg" alt="Gallery Images">
-						</a>
-					</div>
-					<div class="col-sm-12 col-md-4 col-lg-4">
-						<a class="lightbox" href="./storage/gallery-img-01.jpg">
-							<img class="img-fluid3" src="./storage/gallery-img-01.jpg" alt="Gallery Images">
-						</a>
-					</div>
-					<div class="col-sm-6 col-md-4 col-lg-4">
-						<a class="lightbox" href="./storage/gallery-img-04.jpg">
-							<img class="img-fluid3" src="./storage/gallery-img-04.jpg" alt="Gallery Images">
-						</a>
-					</div> 
-					<div class="col-sm-6 col-md-4 col-lg-4">
-						<a class="lightbox" href="./storage/gallery-img-01.jpg">
-							<img class="img-fluid3" src="./storage/gallery-img-01.jpg" alt="Gallery Images">
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<section id=#section7>
+ 
+ <div class="gallery-box">
+   <div class="container-fluid">
+       <div class="row">
+           <div class="col-lg-12">
+               <div class="heading-title text-center">
+               <h2>
+                   <span class="subtitle brand-subtitleFont">Galería</span>
+               </h2>
+               <div class="divider-mark brand-bg"></div>
+               </div>
+           </div>
+       </div>
+       <div class="tz-gallery">
+           <div class="row">
+               <div class="col-sm-12 col-md-4 col-lg-4">
+                   <a class="lightbox" href="../storage/app/public/uploads/galeria1.jpg">
+                       <img class="img-fluid3" src="../storage/app/public/uploads/galeria1.jpg" alt="Gallery Images">
+                   </a>
+               </div>
+               <div class="col-sm-6 col-md-4 col-lg-4">
+                   <a class="lightbox" href="../storage/app/public/uploads/galeria2.jpg">
+                       <img class="img-fluid3" src="../storage/app/public/uploads/galeria2.jpg" alt="Gallery Images">
+                   </a>
+               </div>
+               <div class="col-sm-6 col-md-4 col-lg-4">
+                   <a class="lightbox" href="../storage/app/public/uploads/galeria3.jpg">
+                       <img class="img-fluid3" src="../storage/app/public/uploads/galeria3.jpg" alt="Gallery Images">
+                   </a>
+               </div>
+               <div class="col-sm-12 col-md-4 col-lg-4">
+                   <a class="lightbox" href="../storage/app/public/uploads/galeria4.jpg">
+                       <img class="img-fluid3" src="../storage/app/public/uploads/galeria4.jpg" alt="Gallery Images">
+                   </a>
+               </div>
+               <div class="col-sm-6 col-md-4 col-lg-4">
+                   <a class="lightbox" href="../storage/app/public/uploads/galeria5.jpg">
+                       <img class="img-fluid3" src="../storage/app/public/uploads/galeria5.jpg" alt="Gallery Images">
+                   </a>
+               </div> 
+               <div class="col-sm-6 col-md-4 col-lg-4">
+                   <a class="lightbox" href="../storage/app/public/uploads/galeria6.jpg">
+                       <img class="img-fluid3" src="../storage/app/public/uploads/galeria6.jpg" alt="Gallery Images">
+                   </a>
+               </div>
+           </div>
+       </div>
+   </div>
+   <div id="section8">
+</div>
+</div>
+</section>
+<!-- FIN GALERIA IMAGENES -->
 
-    <!-- FIN GALERIA IMAGENES -->
-
-    <!-- NUESTROS SERVICIOS -->
-    <div class="nuestros-servicios">
+<!-- NUESTROS SERVICIOS -->
+<div class="nuestros-servicios">
        <a id="services" class="anchor"></a>
         <h2>
             <span class="title brand-color brand-titleFont">Nuestros</span>
@@ -479,10 +531,14 @@
             <span>Wifi gratis</span>
         </li>
         </ul>
+        <div id="section9">
     </div>
-
+    
+</div>
+</section>
     <!--FIN NUESTROS SERVICIOS -->
 
+    <section id=#section9>
     <!--CONTACTO -->
     <div class="contacto">
         <a id="contact" class="anchor"></a>
@@ -495,11 +551,11 @@
                 <div class="contact-block2">
                     <a href="#map" class="brand-color click-tracker" data-track-event="Contacts - Find us clicks">
                     <i class="fa fa-map-marker"></i>
-                    <h3>Encuéntrenos</h3>
-                    CARMEN AMAYA 1<br/>
-                    Instagram: @cafeteria_diego/Facebook: Cafetería Diego<br/>
-                    08902 HOSPITALET DE LLOBREGAT<br/>
-                    España</a>
+                        <h3>Encuéntrenos</h3>
+                        CARMEN AMAYA 1<br/>
+                        Instagram: @cafeteria_diego/Facebook: Cafetería Diego<br/>
+                        08902 HOSPITALET DE LLOBREGAT<br/>
+                        España</a>
                 </div>
                 <div class="contact-block2">
                         <a href="mailto:aliciarolom@gmail.com" class="brand-color email">
@@ -538,8 +594,13 @@
             </div>
             <button type="submit" class="btn btn-primary">Sign in</button>
         </form>
-
+    </div>
+</section>
      <!--FIN CONTACTO -->
+
+          <!--FIN CONTACTO -->
+<section id=#section10>
+<div id="section10">
      <footer class="bg-dark text-center text-white">
         <!-- Grid container -->
         <div class="container p-4 pb-0">
@@ -571,7 +632,9 @@
             <a class="text-white" href="https://mdbootstrap.com/">Samue muñoz</a>
         </div>
         <!-- Copyright -->
-</footer>
+    </footer>
+</div>
+</section>
     <script src="{{ mix('js/app.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/app.js')}}"></script> 
 </body>
