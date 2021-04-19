@@ -57,20 +57,15 @@
 
     <!-- INICIO CAROUSEL -->
 <section id=#section1>
-<div id="section1">
+<div id="section1" >
     <div class="container-fluid px-0">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner bg-info" role="listbox">
                 <div class="carousel-item active">
-                <div class="d-flex align-items-center justify-content-center min-vh-100" style="background: url('../storage/app/public/uploads/img_header.jpg');">
+                    <div class="d-flex align-items-center justify-content-center min-vh-100" style="background: url('../storage/app/public/uploads/img_header.jpg');">
                         <h1 class="display-1">CAFETERIA DIEGO</h1>
                         <!-- <p class="p-boton-reserva"><a class="btn-reserva-header" href="#">Modificar</a></p> -->
-                        <form  action="{{url('img_header')}}"  method="post" enctype="multipart/form-data">
-                                    {{csrf_field()}}
-                                    <label>Foto</label>
-                                    <input type="file" name="foto" id="foto" value="">
-                                    <input type="submit" name="submit" value="enviar">
-                                    </form>
+                        <input type="file" name="img">
                     </div>
                 </div>
         </div>
@@ -473,7 +468,7 @@
        <div class="tz-gallery">
            <div class="row">
                <div class="col-sm-12 col-md-4 col-lg-4">
-                   <a class="lightbox" href="../storage/app/public/uploads/galeria1.jpg">
+                   <a class="lightbox" href="../storage/app/public/uploads/galeria1.j">
                        <img class="img-fluid3" src="../storage/app/public/uploads/galeria1.jpg" alt="Gallery Images">
                             <form  action="{{url('galeria1')}}"  method="post" enctype="multipart/form-data">
                             {{csrf_field()}}

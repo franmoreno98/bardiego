@@ -96,7 +96,6 @@
 </section>
 <!-- FIN CAROUSEL -->
 
-
 <!-- CONOZCANOS -->
 <section id=#section2>
     <div class="div-conozcanos">
@@ -211,7 +210,12 @@
 			<div class="row">
 				<div class="col-lg-12 col-sm-12 col-xs-12">
 					<div class="contact-block">
-						<form id="contactForm" action="{{url('/crearReserva/send')}}"  method="get" enctype="multipart/form-data">
+						
+
+
+                    <form id="contactForm" onsubmit="return validarReserva()" action="{{url('/crearReserva')}}"  method="post" enctype="multipart/form-data">
+                        {{csrf_field()}}
+
 							<div class="row">
 								<div class="col-md-6">
 									<h3>Reserva una mesa</h3>
@@ -293,7 +297,12 @@
 								</div>
 								<div class="col-md-12">
 									<div class="submit-button text-center">
-                                    <input type="submit" name="Enviar" value="Enviar">
+                                   
+                                    
+                   
+                    
+                    <input type="submit" name="Enviar" onclick="return confirm('¿Enviar correo?');" value="Enviar">
+                    
 
                                     <!-- <p class="p-boton-reserva"><a class="btn-reserva-header" href="#">Reserva</a></p> -->
 										<div id="msgSubmit" class="h3 text-center hidden"></div> 
@@ -639,3 +648,22 @@
     <script src="{{asset('js/app.js')}}"></script> 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

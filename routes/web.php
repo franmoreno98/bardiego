@@ -3,6 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
+use App\Mail\RecibirMensaje;
+
+use Illuminate\Support\Facades\Mail;
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,24 +21,24 @@ use App\Http\Controllers\HomeController;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/welcome', [HomeController::class, 'index']);
+//Auth::routes();
+ Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+ Route::post('/crearReserva', [App\Http\Controllers\HomeController::class, 'crearReserva']);
+ Route::post('enviarcorreo/{email_reserva}}',[HomeController::class, 'enviarcorreo']);
 Route::get('/admin', [AdminController::class, 'index']);
-Route::get('/reservas', [AdminController::class, 'reserva']);
-Route::get('/modificar', [AdminController::class, 'modificar']);
-Route::delete('/borrar/{id_reserva}', [AdminController::class, 'borrar']);
-Route::get('/crearReserva', [HomeController::class, 'crearReserva']);
-Route::get('/disponibilidad', [HomeController::class, 'disponibilidad ']);
-Route :: post ('/conozcanos', [AdminController ::class, 'conozcanos']);
-Route :: post ('/menu1', [AdminController ::class, 'menu1']);
-Route :: post ('/menu2', [AdminController ::class, 'menu2']);
-Route :: post ('/menu3', [AdminController ::class, 'menu3']);
-Route :: post ('/galeria1', [AdminController ::class, 'galeria1']);
-Route :: post ('/galeria2', [AdminController ::class, 'galeria2']);
-Route :: post ('/galeria3', [AdminController ::class, 'galeria3']);
-Route :: post ('/galeria4', [AdminController ::class, 'galeria4']);
-Route :: post ('/galeria5', [AdminController ::class, 'galeria5']);
-Route :: post ('/galeria6', [AdminController ::class, 'galeria6']);
-Route :: post ('/img_header', [AdminController ::class, 'img_header']);
+ Route::get('/reservas', [AdminController::class, 'reserva']);
+ Route::get('/modificar', [AdminController::class, 'modificar']);
+ Route::get('/disponibilidad', [HomeController::class, 'disponibilidad']);
+ Route::delete('/borrar/{id_reserva}', [AdminController::class, 'borrar']);
+ Route::get('/actualizar/{id_reserva}' ,[AdminController::class, 'actualizar']);
+ Route::put('/modificarReserva/{id_reserva}' ,[AdminController::class, 'modificarReserva']);
+ Route::get('/login', [LoginController::class, 'login']);
+ Route::post('recibirlogin', [LoginController::class, 'recibirlogin']);
+ Route::get('logout',[LoginController::class, 'logout']);
+
+ 
+
