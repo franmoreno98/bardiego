@@ -1,3 +1,9 @@
+<?php 
+ $connect = mysqli_connect("localhost", "root", "", "bardiego");  
+ $query ="SELECT * FROM tbl_reserva ORDER BY id_reserva DESC";  
+ $result = mysqli_query($connect, $query);  
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,19 +15,18 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
-  
-  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
     
 </head>
 <body>
-<script>
-$(document).ready( function () {
-    $('#table').DataTable();
-} );
-</script>
 	<!-- HEADER admin -->
 	<header class="top-navbar">
 		<nav class="navbar navbar-expand-lg navbar-light fixed-top">
@@ -58,49 +63,75 @@ $(document).ready( function () {
 				</div>
             </div>
         </div>
-        <div class="div-tabla-reserva">
-            <table class="table" id="table">
-                <thead class="thead-light">
-                    <tr>
-                        <th scope="col">Nombre</th>
-                        <th scope="col" class="apellido">Apellido</th>
-                        <th scope="col" class="email">Email</th>
-                        <th scope="col" class="telefono">Teléfono</th>
-                        <th scope="col" class="mensaje">Mensaje</th>
-                        <th scope="col" class="fecha">Fecha</th>
-                        <th scope="col" class="hora">Hora</th>
-                        <th scope="col" class="personas">Personas</th>
-                        <th scope="col">Actualizar</th>
-                        <th scope="col">Borrar</th>
-                    </tr>
-                </thead>
-                @foreach ($listaReservas as $reserva)
-                    <tr>
-                        <td>{{$reserva->nombre_reserva}}</td>
-                        <td class="apellido">{{$reserva->apellido_reserva}}</td>
-                        <td class="email">{{$reserva->email_reserva}}</td>
-                        <td class="telefono">{{$reserva->telefono_reserva}}</td>
-                        <td class="mensaje">{{$reserva->mensaje_reserva}}</td>
-                        <td class="fecha">{{$reserva->fecha_reserva}}</td>
-                        <td class="hora">{{$reserva->hora_reserva}}</td>
-                        <td class="personas">{{$reserva->personas_reserva}}</td>
-                        <td>
-                            <form method="get" action="{{url('/actualizar/'.$reserva->id_reserva)}}">
-                            <button type='submit' onclick="return confirm('Estás seguro que quieres actualizar?');" class="btn btn-dark">Actualizar</button>
-                            </form>
-                        </td>
-                        <td>
-                            <form method="post" action="{{url('/borrar/'.$reserva->id_reserva)}}">
-                            {{csrf_field()}}
-                            {{method_field('DELETE')}}
-                            <button type='submit' onclick="return confirm('¿Borrar?');" class="btn btn-danger">Borrar</button>
-                            </form>
-                        </td>
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
-        </div>
+        <table id="table_id" class="table table-hover">
+        <thead class="thead-dark">  
+            <tr>  
+                <td>Nombre</td>  
+                <td>Apellido</td>  
+                <td>Email</td>  
+                <td>Teléfono</td>  
+                <td>Mensaje</td>  
+                <td>Fecha</td>  
+                <td>Hora</td>  
+                <td>Personas</td> 
+                <td>Actualizar</td> 
+                <td>Borrar</td>  
+            </tr>  
+        </thead>  
+
+        <tbody>
+        @foreach ($listaReservas as $listaReserva)
+            <tr>
+                <td>{{$listaReserva->nombre_reserva}}</td>
+                <td>{{$listaReserva->apellido_reserva}}</td>
+                <td>{{$listaReserva->email_reserva}}</td>
+                <td>{{$listaReserva->telefono_reserva}}</td>
+                <td>{{$listaReserva->mensaje_reserva}}</td>
+                <td>{{$listaReserva->fecha_reserva}}</td>
+                <td>{{$listaReserva->hora_reserva}}</td>
+                <td>{{$listaReserva->personas_reserva}}</td>
+                <td>
+                        <form method="get" action="{{url('/actualizar/'.$listaReserva->id_reserva)}}">
+                            <button type='submit' class="btn btn-info" onclick="return confirm('Estás seguro que quieres actualizar?');">Actualizar</button>
+                        </form>
+                </td>
+                <td>
+                    <form method="post" action="{{url('/borrar/'.$listaReserva->id_reserva)}}">
+                        {{csrf_field()}}
+                        {{method_field('DELETE')}}
+                        <button type='submit' onclick="return confirm('¿Borrar?');" class="btn btn-danger">Borrar</button>
+                    </form>
+                </td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
+    <script>
+        $(document).ready(function() {
+            $('#table_id').DataTable( {
+                language:{
+                    "decimal": "",
+                    "emptyTable": "No hay información",
+                    "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+                    "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+                    "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+                    "infoPostFix": "",
+                    "thousands": ",",
+                    "lengthMenu": "Mostrar _MENU_ Entradas",
+                    "loadingRecords": "Cargando...",
+                    "processing": "Procesando...",
+                    "search": "Buscar:",
+                    "zeroRecords": "Sin resultados encontrados",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Ultimo",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    }
+                }
+            } );
+        } );
+    </script>
     </div>
             
     
@@ -142,4 +173,12 @@ $(document).ready( function () {
     <script src="{{ mix('js/app.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/app.js')}}"></script> 
 </body>
+</html>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+
 </html>
